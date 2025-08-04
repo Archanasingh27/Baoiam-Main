@@ -7,6 +7,7 @@ import {
   FaYoutube,
   FaArrowRight,
 } from "react-icons/fa";
+import { Link } from "react-router-dom";
 import applelogo from "../../assets/Footer/Footer2/apple.png"; // Assuming you have a download image
 import googlelogo from "../../assets/Footer/Footer2/google.png"; // Assuming you have a download image
 
@@ -14,17 +15,17 @@ import googlelogo from "../../assets/Footer/Footer2/google.png"; // Assuming you
 const FooterLinksSection = ({ heading, items }) => {
   return (
     <div className="text-sm font-['Poppins']">
-      <h5 className="text-white mb-6">{heading}</h5>
-      <ul className="space-y-4 text-gray-500">
+      <h5 className="text-white mb-2 sm:mb-6">{heading}</h5>
+      <ul className= " space-y-2 sm:space-y-4 text-gray-500">
         {items.map((item, index) => (
           <li key={index}>
-            <a
-              href={item.href}
+            <Link
+              to={item.href}
               className="group inline-flex items-center justify-between transition-all duration-200 hover:text-white hover:underline hover:decoration-orange-500"
             >
               <span>{item.label}</span>
               <FaArrowRight className="ml-1 opacity-0 -translate-x-1 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300" />
-            </a>
+            </Link>
           </li>
         ))}
       </ul>
@@ -46,10 +47,10 @@ const Footer = () => {
     {
       heading: "QUICK LINKS",
       items: [
-        { label: "About", href: "#" },
-        { label: "Become Instructor", href: "#" },
-        { label: "Contact", href: "#" },
-        { label: "GCEP", href: "#" },
+        { label: "About", href: "/aboutUs" },
+        { label: "Become Instructor", href: "/instructor" },
+        { label: "Contact", href: "/contact_us" },
+        { label: "GCEP", href: "/GCEP" },
       ],
     },
     {
@@ -78,47 +79,47 @@ const Footer = () => {
             Follow us for the latest updates, career insights, and program
             launches.
           </p>
-          <div className="flex space-x-3">
-            <a
-              href="https://www.facebook.com/p/%F0%9D%98%BD%F0%9D%98%BC%F0%9D%99%8A-%F0%9D%99%84%F0%9D%98%BC%F0%9D%99%88-%F0%9D%98%89%F0%9D%98%A6-%F0%9D%98%88-%F0%9D%98%96%F0%9D%98%AF%F0%9D%98%A6-%F0%9D%98%90%F0%9D%98%AF-%F0%9D%98%88-%F0%9D%98%94%F0%9D%98%AA%F0%9D%98%AD%F0%9D%98%AD%F0%9D%98%AA%F0%9D%98%B0%F0%9D%98%AF-100064896061625/"
+          <div className="flex space-x-4 sm:space-x-3">
+            <Link
+              to="https://www.facebook.com/p/%F0%9D%98%BD%F0%9D%98%BC%F0%9D%99%8A-%F0%9D%99%84%F0%9D%98%BC%F0%9D%99%88-%F0%9D%98%89%F0%9D%98%A6-%F0%9D%98%88-%F0%9D%98%96%F0%9D%98%AF%F0%9D%98%A6-%F0%9D%98%90%F0%9D%98%AF-%F0%9D%98%88-%F0%9D%98%94%F0%9D%98%AA%F0%9D%98%AD%F0%9D%98%AD%F0%9D%98%AA%F0%9D%98%B0%F0%9D%98%AF-100064896061625/"
               target="_blank"
               rel="noopener noreferrer"
               className="p-3 text-white transition-colors bg-[#363B4766] hover:bg-orange-500"
             >
               <FaFacebookF size={18} />
-            </a>
-            <a
-              href="https://www.instagram.com/baoiamofficial?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
+            </Link>
+            <Link
+              to="https://www.instagram.com/baoiamofficial?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
               target="_blank"
               rel="noopener noreferrer"
               className="p-3 text-white transition-colors bg-[#363B4766] hover:bg-orange-500"
             >
               <FaInstagram size={18} />
-            </a>
-            <a
-              href="https://www.linkedin.com/company/baoiam-innovations-pvt-ltd/posts/?feedView=all"
+            </Link>
+            <Link
+              to="https://www.linkedin.com/company/baoiam-innovations-pvt-ltd/posts/?feedView=all"
               target="_blank"
               rel="noopener noreferrer"
               className="p-3 text-white transition-colors bg-[#363B4766] hover:bg-orange-500"
             >
               <FaLinkedinIn size={18} />
-            </a>
-            <a
-              href="https://x.com/baoiam1"
+            </Link>
+            <Link
+              to="https://x.com/baoiam1"
               target="_blank"
               rel="noopener noreferrer"
               className="p-3 text-white transition-colors bg-[#363B4766] hover:bg-orange-500"
             >
               <FaTwitter size={18} />
-            </a>
-            <a
-              href="https://www.youtube.com/channel/UCuUUMNDJ3DT-Ud_k5tkMVyA"
+            </Link>
+            <Link
+              to="https://www.youtube.com/channel/UCuUUMNDJ3DT-Ud_k5tkMVyA"
               target="_blank"
               rel="noopener noreferrer"
               className="p-3 text-white transition-colors bg-[#363B4766] hover:bg-orange-500"
             >
               <FaYoutube size={18} />
-            </a>
+            </Link>
           </div>
         </div>
 
@@ -133,18 +134,18 @@ const Footer = () => {
 
         {/* App Download */}
         <div className="text-sm">
-          <h5 className="text-white mb-6">DOWNLOAD OUR APP</h5>
+          <h5 className="text-white mb-2 sm:mb-6">DOWNLOAD OUR APP</h5>
 
-          <a href="https://play.google.com/store" target="_blank">
-            <img src={applelogo} alt="App Store" className="h-[58px] w-40" />
-          </a>
-          <a href="https://play.google.com/store" target="_blank">
+          <Link to="https://play.google.com/store" target="_blank">
+            <img src={applelogo} alt="App Store" className="h-[50px] sm:h-[58px] w-40" />
+          </Link>
+          <Link to="https://play.google.com/store" target="_blank">
             <img
               src={googlelogo}
               alt="Google Play"
-              className="h-[58px] w-40 mt-4"
+              className="h-[50px] sm:h-[58px] w-40 mt-4"
             />
-          </a>
+          </Link>
         </div>
       </div>
 
